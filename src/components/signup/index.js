@@ -19,7 +19,7 @@ const Signup = ({matches}) => {
   }
   
   return (
-    <Container>
+    // <Container>
       <FormContainer matches={matches}>
         <CustomTextFeild key="userName" name="userName" variant="outlined" type="text" required placeholder="UserName" value={userName} onChange={(e)=>{setUserName(e.target.value)}}/>
         <CustomTextFeild key="email" name="email" variant="outlined" type="text" required placeholder="Email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
@@ -30,7 +30,7 @@ const Signup = ({matches}) => {
         
         <SignupButton onClick={signupHandler}>sign up</SignupButton>
       </FormContainer>
-    </Container>
+    // </Container>
   );
 }
 
