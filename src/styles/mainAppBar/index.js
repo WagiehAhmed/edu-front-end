@@ -29,19 +29,6 @@ export const MainAppBar = styled(AppBar)(({ drawerwidth, matches }) => ({
     // border: "2px solid green",
   }));
 
-  export const IconContainer = styled(IconButton)(() => ({
-    color: "inherit",
-    width: "40px",
-    height: "40px",
-    margin: "1px",
-    backgroundColor: `${colors.iconContainer}`,
-    "&:hover": {
-      backgroundColor: `${colors.white}`,
-      scale: "1.1",
-    },
-    // border: "2px solid red"
-  }));
-  
   export const SearchBox = styled(Box)(({ matches }) => ({
     maxWidth: matches ? "400px" : "600px",
     flexGrow: 1,

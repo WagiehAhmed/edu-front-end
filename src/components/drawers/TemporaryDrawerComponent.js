@@ -1,5 +1,5 @@
 import React from 'react'
-import { CustomListItem, TemporaryDrawer, UserData, UserImage, UserName, ViewProfileButton } from '../../styles/drawers';
+import { CustomListItem, TemporaryDrawer } from '../../styles/drawers';
 import { Box, List, ListItemButton, ListItemIcon, ListItemText, Toolbar } from '@mui/material';
 
 import HomeIcon from "@mui/icons-material/Home";
@@ -8,6 +8,7 @@ import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import CastForEducationIcon from "@mui/icons-material/CastForEducation";
 import SchoolIcon from "@mui/icons-material/School";
 import { colors } from '../../styles/theme';
+import { UserData, UserImage, UserName, CustomButton } from '../../styles/common';
 
 
 
@@ -22,7 +23,7 @@ const TemporaryDrawerComponent = ({matches,drawerwidth,drawerTriggerHandler,navH
         <UserImage src="./images/a2.jpg" />
         <UserName variant="body1">wagieh ahmed</UserName>
         {/* <UserType variant="body2">student</UserType> */}
-        <ViewProfileButton>view profile</ViewProfileButton>
+        <CustomButton onClick={()=>{navHandler("profile")}}>view profile</CustomButton>
       </UserData>
       <List>
         {["home", "about", "courses", "teachers", "contact"].map(

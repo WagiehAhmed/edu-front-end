@@ -5,7 +5,6 @@ import Course from './Course'
 
 const Courses = ({matches}) => {
   return (
-    <Container>
       <CoursesContainer container columns={{ xs: 4, sm: 8, md: 8 ,lg: 12 ,xl:16}}  matches={matches}>
       <Course matches={matches}></Course>
       <Course matches={matches}></Course>
@@ -46,7 +45,6 @@ const Courses = ({matches}) => {
       <Course matches={matches}></Course>
 
       </CoursesContainer>
-    </Container>
   )
 }
 

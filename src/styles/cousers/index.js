@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -12,10 +13,11 @@ import {
 } from "@mui/material";
 import { colors } from "../theme";
 
+
 export const CoursesContainer = styled(Grid)(({ matches }) => ({
   // padding: matches ? "0px" : "0px 100px",
   boxSizing:"border-box",
-  // border: "5px solid red",
+  // border: "5px solid green",
 }));
 
 export const CourseContainer = styled(Grid)(({ matches }) => ({
@@ -26,7 +28,7 @@ export const CourseContainer = styled(Grid)(({ matches }) => ({
     "&:hover": {
      cursor:"pointer",
     },
-    // border: "5px solid green",
+    // border: "5px solid red",
 }));
 export const CourseCard = styled(Card)(({matches}) => ({
     boxSizing:"border-box",
@@ -34,8 +36,8 @@ export const CourseCard = styled(Card)(({matches}) => ({
 
     minWidth: "200px",
     minHeight: "300px",
+    maxWidth: matches?"100%":"350px",
 
-    maxWidth: matches?"100%":"300px",
     margin: "5px auto",
     // flexGrow:1,
     // border: "5px solid blue",

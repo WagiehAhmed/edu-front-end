@@ -2,11 +2,6 @@ import React from "react";
 import {
   CustomListItem,
   PermanentDrawer,
-  TemporaryDrawer,
-  UserData,
-  UserImage,
-  UserName,
-  ViewProfileButton,
 } from "../../styles/drawers";
 import {
   Box,
@@ -23,6 +18,7 @@ import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import CastForEducationIcon from "@mui/icons-material/CastForEducation";
 import SchoolIcon from "@mui/icons-material/School";
 import { colors } from "../../styles/theme";
+import { UserData, UserImage, UserName, CustomButton } from "../../styles/common";
 
 const PermenantDrawerComponent = ({
   matches,
@@ -38,7 +34,7 @@ const PermenantDrawerComponent = ({
         <UserImage src="./images/a2.jpg" />
         <UserName variant="body1">wagieh ahmed</UserName>
         {/* <UserType variant="body2">student</UserType> */}
-        <ViewProfileButton>view profile</ViewProfileButton>
+        <CustomButton onClick={()=>{navHandler("profile")}}>view profile</CustomButton>
       </UserData>
       <List>
         {["home", "about", "courses", "teachers", "contact"].map(

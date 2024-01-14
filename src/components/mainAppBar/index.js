@@ -9,7 +9,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import {
     CustomAppBarContainer,
     CustomMenuItem,
-    IconContainer,
     MainAppBar,
   MainToolBar,
   SearchBox,
@@ -17,6 +16,7 @@ import {
 } from "../../styles/mainAppBar";
 import { IconButton, InputAdornment, Menu, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { IconContainer } from "../../styles/common";
 
 const MainAppBarComponent = ({matches,drawerwidth,navigate,drawerTriggerHandler}) => {
   
@@ -91,7 +91,7 @@ const MainAppBarComponent = ({matches,drawerwidth,navigate,drawerTriggerHandler}
             />
 
             {searchQuery ? (
-              <IconContainer disableTouchRipple disableFocusRipple>
+              <IconContainer>
                 <SearchIcon color="primary" />
               </IconContainer>
             ) : (
