@@ -4,15 +4,6 @@ import { colors } from "../theme";
 export const ProfileContainer = styled(Box)(() => ({
   padding: "10px",
 }));
-export const CustomDivider = styled(Divider)(() => ({
-  margin: "10px",
-}));
-export const HeaderTitle = styled(Typography)(() => ({
-  textTransform: "capitalize",
-  padding: "5px",
-  fontWeight: "bold",
-  color: `${colors.gray}`,
-}));
 
 export const HorezontalStack = styled(Stack)(({ in_center }) => ({
   flexDirection: "row",
@@ -20,7 +11,7 @@ export const HorezontalStack = styled(Stack)(({ in_center }) => ({
   justifyContent: in_center ? "center" : "flex-start",
   alignItems: "center",
   marginBottom: "5px",
-  paddingBottom: "15px",
+  // paddingBottom: "15px",
     // border: "2px solid blue",
 }));
 export const VericalStack = styled(Stack)(() => ({

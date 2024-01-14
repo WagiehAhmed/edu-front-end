@@ -31,7 +31,7 @@ const PermenantDrawerComponent = ({
     <Box>
       {/* <Toolbar/> */}
       <UserData>
-        <UserImage src="./images/a2.jpg" />
+        <UserImage src="./images/manProfile.png" />
         <UserName variant="body1">wagieh ahmed</UserName>
         {/* <UserType variant="body2">student</UserType> */}
         <CustomButton onClick={()=>{navHandler("profile")}}>view profile</CustomButton>

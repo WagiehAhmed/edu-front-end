@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { InputAdornment } from "@mui/material";
 import {
-  CustomDivider,
-  HeaderTitle,
   ProfileContainer,
   UpdateButton,
 } from "../../styles/profile";
-import { CustomTextFeild, FormContainer } from "../../styles/common";
+import { CustomDivider, CustomTextFeild, FormContainer, HeaderTitle } from "../../styles/common";
 
 
 
@@ -21,13 +19,14 @@ import UpdateIcon from '@mui/icons-material/Update';
 const UpdateProfile = ({ matches }) => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [image, setImage] = useState("");
 
   const updateHandler = () => {
-    console.log("userName", userName);
-    console.log("password", password);
+
+
   };
 
 
@@ -40,7 +39,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <PersonIcon   color="primary"/>
+                <PersonIcon color={userName?"primary":"inherit"}/>
               </InputAdornment>
             ),
           }}
@@ -60,7 +59,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <MailIcon   color="primary"/>
+                <MailIcon  color={email?"primary":"inherit"}/>
               </InputAdornment>
             ),
           }}
@@ -80,7 +79,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <LockIcon   color="primary"/>
+                <LockIcon  color={oldPassword?"primary":"inherit"}/>
               </InputAdornment>
             ),
           }}
@@ -90,9 +89,9 @@ const UpdateProfile = ({ matches }) => {
             type="password"
             required
             placeholder="Old Password"
-            value={password}
+            value={oldPassword}
             onChange={(e) => {
-              setPassword(e.target.value);
+              setOldPassword(e.target.value);
             }}
           />
 
@@ -100,7 +99,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <LockIcon   color="primary"/>
+                <LockIcon  color={newPassword?"primary":"inherit"}/>
               </InputAdornment>
             ),
           }}
@@ -110,9 +109,9 @@ const UpdateProfile = ({ matches }) => {
             type="password"
             required
             placeholder="New Password"
-            value={confirmPassword}
+            value={newPassword}
             onChange={(e) => {
-              setConfirmPassword(e.target.value);
+              setNewPassword(e.target.value);
             }}
           />
 
@@ -120,7 +119,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <LockIcon   color="primary"/>
+                <LockIcon  color={confirmNewPassword?"primary":"inherit"}/>
               </InputAdornment>
             ),
           }}
@@ -130,9 +129,9 @@ const UpdateProfile = ({ matches }) => {
             type="password"
             required
             placeholder="Contirm New Password"
-            value={confirmPassword}
+            value={confirmNewPassword}
             onChange={(e) => {
-              setConfirmPassword(e.target.value);
+              setConfirmNewPassword(e.target.value);
             }}
           />
 
@@ -140,7 +139,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <ImageIcon   color="primary"/>
+                <ImageIcon  color={image?"primary":"inherit"}/>
               </InputAdornment>
             ),
           }}
@@ -150,7 +149,6 @@ const UpdateProfile = ({ matches }) => {
             type="file"
             accept="image/*"
             required
-            value={image}
             onChange={(e) => {
               setImage(e.target.files[0]);
             }}

@@ -19,15 +19,13 @@ const Course = ({ matches }) => {
       
         <CourseCardHeader
           avatar={
-            <Avatar>
-              R
-            </Avatar>
+            <Avatar src="./images/manProfile.png" sx={{width:"60px",height:"60px"}}/>
           }
           title="Shrimp and Chorizo Paella"
           subheader="September 14, 2016"
         />
        
-        <CourseCardMedia image="./images/a0.jpg" title="course media" />
+        <CourseCardMedia image="./images/image1.png" title="course media" />
         
          <CourseCardContent>
           <CourseName gutterBottom variant="h6" component="div">

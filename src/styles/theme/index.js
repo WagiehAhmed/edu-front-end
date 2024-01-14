@@ -6,11 +6,10 @@ export const colors = {
     primary: "#1976D2", 
     textPrimary: "#15284F",
     // textSecondary: "#989696",
-    textSecondary: "#E5E7E4",
+    textSecondary: "#959595",
     iconContainer: "#F0EEEF",
     white:"#FFFFFF",
     black:"#3D3D3D",
-    gray:"#959595",
     green:"#79BB59",
 }
 

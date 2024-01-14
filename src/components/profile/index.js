@@ -2,8 +2,6 @@ import React from "react";
 import {
   ActionItem,
   Container,
-  CustomDivider,
-  HeaderTitle,
   HorezontalStack,
   ProfileContainer,
   VericalStack,
@@ -14,6 +12,8 @@ import {
   UserName,
   CustomButton,
   IconContainer,
+  CustomDivider,
+  HeaderTitle,
 } from "../../styles/common";
 
 import BookmarkIcon from "@mui/icons-material/Bookmark";
@@ -33,7 +33,7 @@ const Profile = ({ matches }) => {
       <CustomDivider />
       <Container>
         <UserData>
-          <UserImage src="./images/a2.jpg" />
+          <UserImage src="./images/manProfile.png" />
           <UserName variant="body1">wagieh ahmed</UserName>
           <CustomButton onClick={()=>{ navigate("/updateProfile", { replace: true })}}>update profile</CustomButton>
         </UserData>

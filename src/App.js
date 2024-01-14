@@ -14,7 +14,7 @@ import Courses from "./components/courses";
 
 import CustomThemeProvider from "./styles/theme";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Signup from './components/signup/index';
 import Login from './components/login/index';
 import Profile from './components/profile/index';
@@ -26,16 +26,17 @@ function App() {
     <CustomThemeProvider>
       <BrowserRouter>
         <Routes>
+        <Route path="/" exact element={<Navigate to="/home"/>}/>   
           <Route path="/" element={<Main matches={matches}/>}>
             <Route path="home" element={<Home matches={matches}/>}/>
-            <Route path="/teachers" element={<Teachers matches={matches}/>}/>
-            <Route path="/courses" element={<Courses matches={matches}/>}/>
-            <Route path="/contact" element={<Contact matches={matches}/>}/>
-            <Route path="/about" element={<About matches={matches}/>}/>
-            <Route path="/signup" element={<Signup matches={matches}/>}/>
-            <Route path="/login" element={<Login matches={matches}/>}/>
-            <Route path="/profile" element={<Profile matches={matches}/>}/>
-            <Route path="/updateProfile" element={<UpdateProfile matches={matches}/>}/>
+            <Route path="teachers" element={<Teachers matches={matches}/>}/>
+            <Route path="courses" element={<Courses matches={matches}/>}/>
+            <Route path="contact" element={<Contact matches={matches}/>}/>
+            <Route path="about" element={<About matches={matches}/>}/>
+            <Route path="signup" element={<Signup matches={matches}/>}/>
+            <Route path="login" element={<Login matches={matches}/>}/>
+            <Route path="profile" element={<Profile matches={matches}/>}/>
+            <Route path="updateProfile" element={<UpdateProfile matches={matches}/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

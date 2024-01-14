@@ -20,7 +20,8 @@ import { colors } from "../theme";
 
 export const MainContainer = styled(Box)(({ drawerwidth, matches }) => ({
   width: matches ? "100%" : `calc(100% - ${drawerwidth}px)`,
-  minHeight: matches ? `calc(100vh - 60px)` : `calc(100% - 64px)`,
+  minHeight: `calc(100vh - 65px)`,
+  // minHeight: matches ? `calc(100vh - 65px)` : `calc(100% - 64px)`,
   marginLeft: matches ? "0px" : `${drawerwidth}px`,
   backgroundColor: "#EEE",
   padding: "5px",
