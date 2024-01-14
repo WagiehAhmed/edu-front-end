@@ -40,7 +40,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <PersonIcon />
+                <PersonIcon   color="primary"/>
               </InputAdornment>
             ),
           }}
@@ -60,7 +60,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <MailIcon />
+                <MailIcon   color="primary"/>
               </InputAdornment>
             ),
           }}
@@ -80,7 +80,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <LockIcon />
+                <LockIcon   color="primary"/>
               </InputAdornment>
             ),
           }}
@@ -100,7 +100,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <LockIcon />
+                <LockIcon   color="primary"/>
               </InputAdornment>
             ),
           }}
@@ -120,7 +120,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <LockIcon />
+                <LockIcon   color="primary"/>
               </InputAdornment>
             ),
           }}
@@ -140,7 +140,7 @@ const UpdateProfile = ({ matches }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <ImageIcon />
+                <ImageIcon   color="primary"/>
               </InputAdornment>
             ),
           }}

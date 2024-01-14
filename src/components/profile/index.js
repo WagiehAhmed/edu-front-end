@@ -43,7 +43,7 @@ const Profile = ({ matches }) => {
             <ActionItem>
               <HorezontalStack>
                 <IconContainer>
-                  <BookmarkIcon  color="primary" />
+                  <BookmarkIcon  color="primary"/>
                 </IconContainer>
                 <VericalStack>
                     <Typography variant="h5">

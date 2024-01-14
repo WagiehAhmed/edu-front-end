@@ -11,9 +11,7 @@ export const AboutContainer = styled(Box)(() => ({
 
 export const AboutInfo = styled(Stack)(({ matches }) => ({
   flexDirection: matches ? "column" : "row",
-//   justifyContent: "space-evenly",
-//   alignItems: matches ? "center" : "stretch",
-  margin: "10px auto",
+  // margin: "10px auto",
   border: "2px solid green",
   minHeight:"500px",
 }));
@@ -49,15 +47,12 @@ export const AboutImageContaimer = styled(Box)(({ matches }) => ({
   minWidth: "300px",
   border: "2px solid red",
 }));
+
 export const AboutImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
   height: "100%",
   boxSizing: "border-box",
-  // maxWidth:matches?"100%":"1000px",
-  // maxHeight:matches?"100%":"600px",
-  // border:"2px solid green",
-  // flexGrow:1,
 }));
 
 // fsdfasdfasdfasdfasdffffffffffffffffffffffffffffffffffffffffffffffffffff

@@ -23,7 +23,7 @@ const Login = ({ matches }) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <MailIcon />
+              <MailIcon color={userName?"primary":"inherit"}/>
             </InputAdornment>
           ),
         }}
@@ -42,7 +42,7 @@ const Login = ({ matches }) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <LockIcon />
+              <LockIcon color={password?"primary":"inherit"}/>
             </InputAdornment>
           ),
         }}

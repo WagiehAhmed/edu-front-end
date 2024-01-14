@@ -31,7 +31,7 @@ const Signup = ({matches}) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <PersonIcon />
+                <PersonIcon color={userName?"primary":"inherit"}/>
               </InputAdornment>
             ),
           }}
@@ -40,7 +40,7 @@ const Signup = ({matches}) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <MailIcon />
+              <MailIcon color={email?"primary":"inherit"}/>
             </InputAdornment>
           ),
         }}
@@ -49,7 +49,7 @@ const Signup = ({matches}) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <LockIcon />
+              <LockIcon  color={password?"primary":"inherit"}/>
             </InputAdornment>
           ),
         }}
@@ -58,7 +58,7 @@ const Signup = ({matches}) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <LockIcon />
+              <LockIcon color={confirmPassword?"primary":"inherit"}/>
             </InputAdornment>
           ),
         }}
@@ -68,11 +68,11 @@ const Signup = ({matches}) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <ImageIcon />
+              <ImageIcon  color={image?"primary":"inherit"}/>
             </InputAdornment>
           ),
         }}
-        key="image" name="image"  ref={imageRef} variant="outlined" type="file" accept="image/*" required value={image} onChange={(e)=>{setImage(e.target.files[0])}}/>
+        key="image" name="image" variant="outlined" type="file" accept="image/*" required onChange={(e)=>{setImage(e.target.files[0])}}/>
         
         <SignupButton onClick={signupHandler} startIcon={<HowToRegIcon/>}>sign up</SignupButton>
       </FormContainer>

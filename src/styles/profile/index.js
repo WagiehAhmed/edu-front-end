@@ -21,13 +21,13 @@ export const HorezontalStack = styled(Stack)(({ in_center }) => ({
   alignItems: "center",
   marginBottom: "5px",
   paddingBottom: "15px",
-  //   border: "2px solid blue",
+    // border: "2px solid blue",
 }));
 export const VericalStack = styled(Stack)(() => ({
   flexDirection: "column",
   justifyContent: "spacee-between",
   marginLeft: "5px",
-  //   border: "2px solid blue",
+    // border: "2px solid green",
 }));
 
 export const ActionItem = styled(Box)(() => ({

@@ -7,7 +7,7 @@ export const FormContainer = styled(FormControl)(({ matches }) => ({
   boxSizing: "border-box",
   borderRadius: "10px",
   width: matches ? "80%" : "40%",
-  minWidth:"400px",
+  minWidth:"300px",
   maxWidth:"500px",
   position: "absolute",
   top: "50%",
@@ -35,6 +35,8 @@ export const CustomTextFeild = styled(TextField)(() => ({
     padding:"10px ",
     borderRadius: "50px",
   },
+
+
 }));
 
 
