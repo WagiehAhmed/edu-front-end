@@ -1,17 +1,18 @@
-import { Box, Button, Divider, FormControl, Stack, Typography, styled } from "@mui/material";
+import { Box, Button, Divider, FormControl, Grid, Stack, Typography, styled } from "@mui/material";
 import { colors } from "../theme";
 
 export const ProfileContainer = styled(Box)(() => ({
   padding: "10px",
 }));
 
-export const HorezontalStack = styled(Stack)(({ in_center }) => ({
+
+
+export const HorezontalStack = styled(Stack)(( ) => ({
   flexDirection: "row",
   flexWrap: "wrap",
-  justifyContent: in_center ? "center" : "flex-start",
+  justifyContent: "flex-start",
   alignItems: "center",
   marginBottom: "5px",
-  // paddingBottom: "15px",
     // border: "2px solid blue",
 }));
 export const VericalStack = styled(Stack)(() => ({
@@ -21,21 +22,28 @@ export const VericalStack = styled(Stack)(() => ({
     // border: "2px solid green",
 }));
 
-export const ActionItem = styled(Box)(() => ({
-  flexGrow: 1,
-  minWidth: "250px",
+export const ActionItemsContainer = styled(Grid)(() => ({
+  // backgroundColor:"red",
+}));
+
+export const ActionItemContainer = styled(Grid)(() => ({
+  padding:"10px",
+  // backgroundColor:"green",
+}));
+
+export const ActionItem = styled(Grid)(() => ({
+  minWidth: "200px",
   maxWidth: "500px",
-  margin: "10px",
+  margin: "0px auto",
   padding: "10px",
   borderRadius: "10px",
   backgroundColor: "#E5E7E4",
   boxShadow:
-    "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
-  //   border: "2px solid green",
+  "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
   "&:hover":{
     transform:"scale(1.05,1.05)",
-    // scale: "1.5 1.5"
-  }
+  },
+  // border: "2px solid red",
 }));
 
 

@@ -5,8 +5,8 @@ import { createTheme } from "@mui/material"
 export const colors = {
     primary: "#1976D2", 
     textPrimary: "#15284F",
-    // textSecondary: "#989696",
     textSecondary: "#959595",
+    backgroundSecondary: "#E5E7E4",
     iconContainer: "#F0EEEF",
     white:"#FFFFFF",
     black:"#3D3D3D",

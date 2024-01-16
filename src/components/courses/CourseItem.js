@@ -9,9 +9,11 @@ import {
   CourseName,
   ViewCourse,
 } from "../../styles/cousers";
-import { Avatar, CardActions, CardContent } from "@mui/material";
+import { Avatar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const Course = ({ matches }) => {
+const CourseItem = ({ matches }) => {
+  const navigate= useNavigate()
   return (
     <CourseContainer item xs={4} matches={matches}>
 
@@ -27,15 +29,15 @@ const Course = ({ matches }) => {
        
         <CourseCardMedia image="./images/image1.png" title="course media" />
         
-         <CourseCardContent>
-          <CourseName gutterBottom variant="h6" component="div">
+         {/* <CourseCardContent> */}
+          <CourseName variant="h6" component="div">
            Node js course
           </CourseName>
           {/* <Rating defaultValue={2} precision={1}/> */}
-        </CourseCardContent>
+        {/* </CourseCardContent> */}
 
         <CourseCardActions >
-          <ViewCourse variant="filled">view course</ViewCourse>
+          <ViewCourse onClick={()=>{navigate("/courses/1",{replace:false})}}>view course</ViewCourse>
         </CourseCardActions>
         
       </CourseCard>
@@ -44,4 +46,4 @@ const Course = ({ matches }) => {
   );
 };
 
-export default Course;
+export default CourseItem;

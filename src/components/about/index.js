@@ -8,6 +8,8 @@ import {
   AboutInfo,
   AboutTitle,
   ActionItem,
+  ActionItemContainer,
+  ActionItemsContainer,
   ActionsContainer,
   HorezontalStack,
   ReviewsContainer,
@@ -90,7 +92,9 @@ const About = ({ matches }) => {
         </AboutContent>
       </AboutInfo>
 
-      <ActionsContainer in_center="true">
+
+      <ActionItemsContainer container columns={{ xs: 4,sm: 8, md:8 ,lg:16 }}>
+      <ActionItemContainer item xs={4}>
         <ActionItem>
           <HorezontalStack>
             <IconContainer>
@@ -104,7 +108,9 @@ const About = ({ matches }) => {
             </VericalStack>
           </HorezontalStack>
         </ActionItem>
+      </ActionItemContainer>
 
+      <ActionItemContainer item xs={4}>
         <ActionItem>
           <HorezontalStack>
             <IconContainer>
@@ -118,7 +124,9 @@ const About = ({ matches }) => {
             </VericalStack>
           </HorezontalStack>
         </ActionItem>
+      </ActionItemContainer>
 
+      <ActionItemContainer item xs={4}>
         <ActionItem>
           <HorezontalStack>
             <IconContainer>
@@ -132,7 +140,9 @@ const About = ({ matches }) => {
             </VericalStack>
           </HorezontalStack>
         </ActionItem>
+      </ActionItemContainer>
 
+      <ActionItemContainer item xs={4}>
         <ActionItem>
           <HorezontalStack>
             <IconContainer>
@@ -146,7 +156,8 @@ const About = ({ matches }) => {
             </VericalStack>
           </HorezontalStack>
         </ActionItem>
-      </ActionsContainer>
+      </ActionItemContainer>
+      </ActionItemsContainer>
 
 
 
@@ -156,12 +167,6 @@ const About = ({ matches }) => {
       <CustomDivider />
       <ReviewsContainer>
         <Slider {...settings}>
-          <ReviewItem matches={matches} />
-          <ReviewItem matches={matches} />
-          <ReviewItem matches={matches} />
-          <ReviewItem matches={matches} />
-          <ReviewItem matches={matches} />
-          <ReviewItem matches={matches} />
           <ReviewItem matches={matches} />
           <ReviewItem matches={matches} />
           <ReviewItem matches={matches} />

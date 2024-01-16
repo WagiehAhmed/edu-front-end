@@ -19,6 +19,8 @@ import Signup from './components/signup/index';
 import Login from './components/login/index';
 import Profile from './components/profile/index';
 import UpdateProfile from "./components/updateProfile";
+import CoursePage from "./components/courses/CoursePage";
+import CourseLessonPage from "./components/courses/CourseLessonPage";
 
 function App() {
   const matches = useMediaQuery(useTheme().breakpoints.down("md"));
@@ -29,13 +31,20 @@ function App() {
         <Route path="/" exact element={<Navigate to="/home"/>}/>   
           <Route path="/" element={<Main matches={matches}/>}>
             <Route path="home" element={<Home matches={matches}/>}/>
+            {/* <Route path="home/:courseId" element={<CoursePage matches={matches}/>}/> */}
             <Route path="teachers" element={<Teachers matches={matches}/>}/>
+
             <Route path="courses" element={<Courses matches={matches}/>}/>
+            <Route path="courses/:courseId" element={<CoursePage matches={matches}/>}/>
+            <Route path="courses/:courseId/:lessonId" element={<CourseLessonPage matches={matches}/>}/>
+            
             <Route path="contact" element={<Contact matches={matches}/>}/>
             <Route path="about" element={<About matches={matches}/>}/>
             <Route path="signup" element={<Signup matches={matches}/>}/>
             <Route path="login" element={<Login matches={matches}/>}/>
+
             <Route path="profile" element={<Profile matches={matches}/>}/>
+            <Route path="profile/:userId" element={<Profile matches={matches}/>}/>
             <Route path="updateProfile" element={<UpdateProfile matches={matches}/>}/>
           </Route>
         </Routes>
@@ -43,5 +52,9 @@ function App() {
     </CustomThemeProvider>
   );
 }
+// /profile/:id?
+
+
+
 
 export default App;

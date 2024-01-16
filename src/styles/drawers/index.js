@@ -20,15 +20,15 @@ import { colors } from "../theme";
 
 export const MainContainer = styled(Box)(({ drawerwidth, matches }) => ({
   width: matches ? "100%" : `calc(100% - ${drawerwidth}px)`,
-  minHeight: `calc(100vh - 65px)`,
+  minHeight: `calc(100vh - 64px)`,
   // minHeight: matches ? `calc(100vh - 65px)` : `calc(100% - 64px)`,
   marginLeft: matches ? "0px" : `${drawerwidth}px`,
-  backgroundColor: "#EEE",
+  backgroundColor: `${colors.white}`,
   padding: "5px",
   position:"relative",
   boxSizing:"border-box",
-  border: "2px solid red",
   zIndex:"0",
+  // border: "2px solid red",
 }));
 
 export const TemporaryDrawer = styled(Drawer)(({ drawerwidth, matches }) => ({

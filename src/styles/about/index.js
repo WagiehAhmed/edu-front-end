@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { colors } from "../theme";
 
 import { Avatar, Paper } from "@mui/material";
@@ -15,16 +15,12 @@ export const AboutContainer = styled(Box)(() => ({
 
 export const AboutInfo = styled(Stack)(({ matches }) => ({
   flexDirection: matches ? "column" : "row",
-  // margin: "10px auto",
-  justifyContent:'center',
-  alignItems: matches? "center":"",
-  // minHeight:"500px",
   // border: "2px solid green",
 }));
 
 export const AboutContent = styled(Stack)(({ matches }) => ({
-  maxWidth: "700px",
-  minWidth: "300px",
+  flexGrow: 1,
+  maxWidth: matches?"100%":"50%",
   flexDirection: "column",
   justifyContent: "center",
   padding: "30px",
@@ -49,8 +45,8 @@ export const AboutDescription = styled(Typography)(() => ({
 }));
 
 export const AboutImageContaimer = styled(Box)(({ matches }) => ({
-  maxWidth: "700px",
-  minWidth: "300px",
+  flexGrow: 1,
+  maxWidth: matches?"100%":"50%",
   // border: "2px solid red",
 }));
 
@@ -94,14 +90,41 @@ export const ActionsContainer = styled(Stack)(({ in_center }) => ({
 
 
 
+
+export const ActionItemsContainer = styled(Grid)(() => ({
+  // backgroundColor:"red",
+  padding:"20px 0px"
+}));
+
+export const ActionItemContainer = styled(Grid)(() => ({
+  padding:"10px",
+  // backgroundColor:"green",
+}));
+
+// export const ActionItem = styled(Grid)(() => ({
+//   minWidth: "200px",
+//   maxWidth: "500px",
+//   margin: "0px auto",
+//   padding: "10px",
+//   borderRadius: "10px",
+//   backgroundColor: "#E5E7E4",
+//   boxShadow:
+//   "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+//   "&:hover":{
+//     transform:"scale(1.05,1.05)",
+//   },
+//   // border: "2px solid red",
+// }));
+
+
+
 export const ActionItem = styled(Box)(() => ({
-  flexGrow: 1,
   minWidth: "250px",
   maxWidth: "500px",
   margin: "10px",
   padding: "10px",
   borderRadius: "10px",
-  backgroundColor: "#E5E7E4",
+  backgroundColor: `${colors.backgroundSecondary}`,
   boxShadow:"rgba(0, 0, 0, 0.3) 10px 20px 38px, rgba(0, 0, 0, 0.22) 10px 20px 12px, rgba(0, 0, 0, 0.35) 0px 5px 15px",
     
     
@@ -117,7 +140,6 @@ export const ActionItem = styled(Box)(() => ({
 
 
 export const ReviewsContainer = styled(Box)(() => ({
-  
   backgroundColor: "white",
   backgroundColor:"transparent",
   padding: "20px 0px 40px 0px",
@@ -134,6 +156,7 @@ cursor:"pointer",
   margin: "20px auto",
   padding: "5px",
   boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px",
+  backgroundColor: `${colors.backgroundSecondary}`,
     
   // margin: "10px 50px ",
   // minWidth: "300px",

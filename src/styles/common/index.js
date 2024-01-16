@@ -32,8 +32,8 @@ export const UserData = styled(Box)(() => ({
 
 export const UserImage = styled(Avatar)(({ src }) => ({
   src: `${src}`,
-  width: "100px",
-  height: "100px",
+  width: "80px",
+  height: "80px",
 }));
 
 export const UserName = styled(Typography)(() => ({
@@ -57,6 +57,38 @@ export const CustomTextFeild = styled(TextField)(() => ({
     padding:"10px ",
     borderRadius: "50px",
   },
+
+
+  
+
+  // '& label.Mui-focused': {
+  //   color: '#A0AAB4',
+  // },
+  // '& .MuiInput-underline:after': {
+  //   borderBottomColor: '#B2BAC2',
+  // },
+  // '& .MuiOutlinedInput-root': {
+  //   '& fieldset': {
+  //     borderColor: '#E0E3E7',
+  //   },
+  //   '&:hover fieldset': {
+  //     borderColor: '#B2BAC2',
+  //   },
+  //   '&.Mui-focused fieldset': {
+  //     // borderColor: '#6F7E8C',
+  //     borderColor: 'red',
+  //   },
+  // },
+
+
+
+
+
+
+
+
+
+
 }));
 
 export const CustomButton = styled(Button)(() => ({
