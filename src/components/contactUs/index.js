@@ -3,67 +3,63 @@ import {
   ActionItem,
   ActionItemContainer,
   ActionItemsContainer,
-  ContactContainer,
   ContactContent,
-  ContactDescription,
   ContactImage,
   ContactImageContaimer,
   ContactInfo,
   ContactTitle,
-  CustomTextFeild,
   FormContainer,
-  HorezontalStack,
+  FormControlContainer,
   SendButton,
-  VericalStack,
 } from "../../styles/contact";
-import { FormControlLabel, Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 
-import { IconContainer } from "../../styles/common";
+import { Container, CustomForm, CustomMultilineTextFeild, CustomTextFeild, IconContainer } from "../../styles/common";
 import { colors } from "../../styles/theme";
 
 const Contact = ({ matches }) => {
   return (
-    <ContactContainer>
+    <Container>
       <ContactInfo matches={matches}>
         <ContactImageContaimer  matches={matches}>
           <ContactImage src="./images/Contact us-rafiki.png" />
         </ContactImageContaimer>
 
         <ContactContent matches={matches}>
-          <form>
-            <FormContainer matches={matches}>
+          <FormContainer  matches={matches}>
+            <FormControlContainer matches={matches}>
               <ContactTitle matches={matches} >
               get in touch
               </ContactTitle>
             
-           <CustomTextFeild type="text" placeholder="Your Name" key="name"  name="name" />
+           <CustomTextFeild type="text" label="Your Name" key="name"  name="name" />
               <CustomTextFeild
                 type="email"
-                placeholder="Your Email"
+                label="Your Email"
                 key="email"
                 name="email"
               />
               <CustomTextFeild
                 type="text"
-                placeholder="Your Number"
+                label="Your Number"
                 key="number"
                 name="number"
               />
-              <CustomTextFeild
+              <CustomMultilineTextFeild
                 type="text"
                 multiline
                 rows={5}
-                placeholder="Your Message"
+                label="Your Message"
                 key="message"
                 name="message"
               />
               <SendButton type="submet">Send message</SendButton>
-            </FormContainer>
-          </form>
+            </FormControlContainer>
+          </FormContainer>
         </ContactContent>
       </ContactInfo>
 
@@ -115,7 +111,7 @@ const Contact = ({ matches }) => {
 
 
       </ActionItemsContainer>
-    </ContactContainer>
+    </Container>
   );
 };
 

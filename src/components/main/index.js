@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-// import AppDrawer from '../drawer';
 import { Box, Toolbar } from "@mui/material";
 import MainAppBarComponent from "../mainAppBar";
 import TemporaryDrawerComponent from "../drawers/TemporaryDrawerComponent";
 import { Outlet, useNavigate } from "react-router-dom";
-import PermenantDrawerComponent from "../drawers/PermenantDrawerComponent";
-import { DrawerContainer, MainContainer } from "../../styles/drawers";
+import { MainContainer } from "../../styles/drawers";
+import { Container, HeaderContainer, MainHeader } from "../../styles/common";
 
 const Main = ({ matches }) => {
   const drawerwidth = 240;
@@ -26,17 +25,14 @@ const Main = ({ matches }) => {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100vh",
-      }}
-    >
+    <Box>
       <MainAppBarComponent
         matches={matches}
         drawerwidth={drawerwidth}
         drawerTriggerHandler={drawerTriggerHandler}
         navigate={navigate}
+        navHandler={navHandler}
+        active={active}
       />
 
       <TemporaryDrawerComponent
@@ -48,19 +44,13 @@ const Main = ({ matches }) => {
         active={active}
       />
 
-      <PermenantDrawerComponent
-        matches={matches}
-        drawerwidth={drawerwidth}
-        drawerTriggerHandler={drawerTriggerHandler}
-        navHandler={navHandler}
-        active={active}
-      />
-
       <Toolbar />
-      <MainContainer drawerwidth={drawerwidth} matches={matches}>
+      <HeaderContainer matches={matches}>
+        <MainHeader matches={matches}>technological tracks</MainHeader>
+      </HeaderContainer>
+      <MainContainer matches={matches} drawerwidth={drawerwidth}>
         <Outlet />
       </MainContainer>
-
     </Box>
   );
 };

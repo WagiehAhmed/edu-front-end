@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { InputAdornment } from "@mui/material";
+import { ProfileContainer, UpdateButton } from "../../styles/profile";
 import {
-  ProfileContainer,
-  UpdateButton,
-} from "../../styles/profile";
-import { CustomDivider, CustomTextFeild, FormContainer, HeaderTitle } from "../../styles/common";
+  Container,
+  CustomDivider,
+  CustomForm,
+  CustomFormControl,
+  CustomTextFeild,
+  HeaderTitle,
+} from "../../styles/common";
 
-
-
-
-import ImageIcon from '@mui/icons-material/Image';
-import LockIcon from '@mui/icons-material/Lock';
-import MailIcon from '@mui/icons-material/Mail';
-import PersonIcon from '@mui/icons-material/Person';
-import UpdateIcon from '@mui/icons-material/Update';
-
+import ImageIcon from "@mui/icons-material/Image";
+import LockIcon from "@mui/icons-material/Lock";
+import MailIcon from "@mui/icons-material/Mail";
+import PersonIcon from "@mui/icons-material/Person";
+import UpdateIcon from "@mui/icons-material/Update";
 
 const UpdateProfile = ({ matches }) => {
   const [userName, setUserName] = useState("");
@@ -24,25 +24,22 @@ const UpdateProfile = ({ matches }) => {
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [image, setImage] = useState("");
 
-  const updateHandler = () => {
-
-
-  };
-
+  const updateHandler = () => {};
 
   return (
-    <ProfileContainer>
+    <Container>
       <HeaderTitle variant={matches ? "h6" : "h4"}>update profile</HeaderTitle>
       <CustomDivider />
-        <FormContainer  matches={matches}>
+      <CustomForm matches={matches}>
+        <CustomFormControl matches={matches}>
           <CustomTextFeild
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <PersonIcon color={userName?"primary":"inherit"}/>
-              </InputAdornment>
-            ),
-          }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <PersonIcon color={userName ? "primary" : "inherit"} />
+                </InputAdornment>
+              ),
+            }}
             key="userName"
             name="userName"
             variant="outlined"
@@ -56,13 +53,13 @@ const UpdateProfile = ({ matches }) => {
           />
 
           <CustomTextFeild
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <MailIcon  color={email?"primary":"inherit"}/>
-              </InputAdornment>
-            ),
-          }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <MailIcon color={email ? "primary" : "inherit"} />
+                </InputAdornment>
+              ),
+            }}
             key="email"
             name="email"
             variant="outlined"
@@ -76,13 +73,13 @@ const UpdateProfile = ({ matches }) => {
           />
 
           <CustomTextFeild
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockIcon  color={oldPassword?"primary":"inherit"}/>
-              </InputAdornment>
-            ),
-          }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon color={oldPassword ? "primary" : "inherit"} />
+                </InputAdornment>
+              ),
+            }}
             key="oldPassword"
             name="oldPassword"
             variant="outlined"
@@ -96,13 +93,13 @@ const UpdateProfile = ({ matches }) => {
           />
 
           <CustomTextFeild
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockIcon  color={newPassword?"primary":"inherit"}/>
-              </InputAdornment>
-            ),
-          }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon color={newPassword ? "primary" : "inherit"} />
+                </InputAdornment>
+              ),
+            }}
             key="NewPassword"
             name="NewPassword"
             variant="outlined"
@@ -116,13 +113,15 @@ const UpdateProfile = ({ matches }) => {
           />
 
           <CustomTextFeild
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockIcon  color={confirmNewPassword?"primary":"inherit"}/>
-              </InputAdornment>
-            ),
-          }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon
+                    color={confirmNewPassword ? "primary" : "inherit"}
+                  />
+                </InputAdornment>
+              ),
+            }}
             key="confirmNewPassword"
             name="confirmNewPassword"
             variant="outlined"
@@ -136,13 +135,13 @@ const UpdateProfile = ({ matches }) => {
           />
 
           <CustomTextFeild
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <ImageIcon  color={image?"primary":"inherit"}/>
-              </InputAdornment>
-            ),
-          }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <ImageIcon color={image ? "primary" : "inherit"} />
+                </InputAdornment>
+              ),
+            }}
             key="image"
             name="image"
             variant="outlined"
@@ -154,9 +153,16 @@ const UpdateProfile = ({ matches }) => {
             }}
           />
 
-          <UpdateButton onClick={updateHandler} startIcon={<UpdateIcon/>}>update</UpdateButton>
-        </FormContainer>
-    </ProfileContainer>
+          <UpdateButton
+            onClick={updateHandler}
+            startIcon={<UpdateIcon />}
+            type="submit"
+          >
+            update
+          </UpdateButton>
+        </CustomFormControl>
+      </CustomForm>
+    </Container>
   );
 };
 

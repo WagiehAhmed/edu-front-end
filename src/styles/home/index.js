@@ -12,13 +12,13 @@ import {
 } from "@mui/material";
 import { colors } from "../theme";
 
-export const CoursesContainer = styled(Grid)(({ matches }) => ({
+export const CoursesContainer = styled(Grid)(() => ({
   boxSizing: "border-box",
   // backgroundColor: "red",
 //   border: "5px solid red",
 }));
 
-export const QuickLinksContainer = styled(Grid)(({ matches }) => ({
+export const QuickLinksContainer = styled(Grid)(() => ({
   boxSizing: "border-box",
   // backgroundColor: "red",
 //   border: "5px solid red",
@@ -53,12 +53,6 @@ export const QuickLinkCardHeader = styled(CardHeader)(
   })
 );
 
-//   export const CourseCardMedia = styled(CardMedia)(({ image, title }) => ({
-//     height: "200px",
-//     image: image,
-//     title: title,
-//   }));
-
 export const QuickLinkCardContent = styled(CardContent)(() => ({
   padding: "0px 10px",
 //   border: "5px solid yellow",
@@ -72,12 +66,6 @@ export const TopicChip = styled(Chip)(() => ({
     color: `${colors.white}`,
     transform: "scale(1.1,1.1)",
   },
-}));
-
-export const BecomeToturText = styled(Typography)(() => ({
-  padding: "5px",
-  color: `${colors.textSecondary}`,
-  // color: `${colors.white}`,
 }));
 
 export const CourseName = styled(Typography)(() => ({

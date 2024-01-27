@@ -1,11 +1,6 @@
 import { Box, Button, Divider, FormControl, Grid, Stack, Typography, styled } from "@mui/material";
 import { colors } from "../theme";
 
-export const ProfileContainer = styled(Box)(() => ({
-  padding: "10px",
-}));
-
-
 
 export const HorezontalStack = styled(Stack)(( ) => ({
   flexDirection: "row",
@@ -31,9 +26,11 @@ export const ActionItemContainer = styled(Grid)(() => ({
   // backgroundColor:"green",
 }));
 
-export const ActionItem = styled(Grid)(() => ({
+export const ActionItem = styled(Grid)(({matches}) => ({
+  // minWidth: "200px",
+  // maxWidth: "500px",
   minWidth: "200px",
-  maxWidth: "500px",
+    maxWidth: matches ? "100%" : "300px",
   margin: "0px auto",
   padding: "10px",
   borderRadius: "10px",
@@ -49,16 +46,16 @@ export const ActionItem = styled(Grid)(() => ({
 
 
 
-export const Container = styled(Box)(() => ({
+export const ProfileContainer = styled(Box)(() => ({
     boxSizing: "border-box",
     borderRadius:"10px",
     margin: "25px auto",
     padding: "10px",
-    width: "fit-content",
     height: "100%",
     backgroundColor: `${colors.white}`,
     boxShadow:"rgba(0, 0, 0, 0.1) 5px 5px 10px, rgba(0, 0, 0, 0.1) 5px 5px 10px",
-    // border: "2px solid red",
+    // width: "fit-content",
+    // border: "2px solid green",
   }));
 
 

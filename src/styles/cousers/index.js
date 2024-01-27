@@ -6,15 +6,17 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  FormControl,
   Grid,
   IconButton,
   Stack,
+  TextField,
   Typography,
   styled,
 } from "@mui/material";
 import { colors } from "../theme";
 
-export const CoursesContainer = styled(Grid)(({ matches }) => ({
+export const CoursesContainer = styled(Grid)(() => ({
   boxSizing: "border-box",
   // backgroundColor: "red",
   // border: "5px solid red",
@@ -123,9 +125,9 @@ export const CourseInfo = styled(Stack)(({ matches }) => ({
   // border: "2px solid green",
 }));
 
-export const CourseContent = styled(Stack)(({matches}) => ({
+export const CourseContent = styled(Stack)(({ matches }) => ({
   flexGrow: 1,
-  maxWidth: matches?"100%":"50%",
+  maxWidth: matches ? "100%" : "50%",
   flexDirection: "column",
   justifyContent: "center",
   padding: "30px",
@@ -149,9 +151,9 @@ export const CourseDescription = styled(Typography)(() => ({
   },
 }));
 
-export const CourseImageContaimer = styled(Box)(({matches}) => ({
+export const CourseImageContaimer = styled(Box)(({ matches }) => ({
   flexGrow: 1,
-  maxWidth: matches?"100%":"50%",
+  maxWidth: matches ? "100%" : "50%",
   // border: "2px solid red",
 }));
 
@@ -160,4 +162,81 @@ export const CourseImage = styled("img")(({ src }) => ({
   width: "100%",
   height: "100%",
   boxSizing: "border-box",
+}));
+
+export const LessonVideo = styled("video")(() => ({
+  width: "100%",
+  maxHeight: "800px",
+  boxSizing: "border-box",
+  // border: "2px solid green",
+}));
+export const LessonSource = styled("source")(({ src, type }) => ({
+  src: src,
+  type: type,
+  border: "2px solid red",
+}));
+
+export const LessonDescription = styled(Typography)(() => ({
+  color: `${colors.textSecondary}`,
+  padding: "10px 20px",
+  textTransform: "capitalize",
+  marginBottom: "10px",
+  lineHeight: "35px",
+  "&:hover": {
+    color: `${colors.textPrimary}`,
+  },
+}));
+
+export const HorizontalStack = styled(Stack)(() => ({
+  width: "fit-content",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  // border: "2px solid red",
+}));
+export const VerticalStack = styled(Stack)(() => ({
+  width: "fit-content",
+  flexDirection: "column",
+  // justifyContent:"center",
+  // alignItems:"center",
+  // border: "2px solid green",
+}));
+
+export const IconContainer = styled(IconButton)(() => ({
+  color: "inherit",
+  width: "40px",
+  height: "40px",
+  margin: "1px",
+  // border: `1px solid ${colors.primary}`,
+  // backgroundColor: `${colors.iconContainer}`,
+  backgroundColor: "transparent",
+  "&:hover": {
+    backgroundColor: `${colors.white}`,
+    scale: "1.1",
+  },
+  // border: "2px solid red"
+}));
+
+export const CustomForm = styled("form")(({ matches }) => ({
+  width: matches ? "80%" : "40%",
+  minWidth: matches?"300px":"400px",
+  minWidth:"100%",
+  marginBottom:"20px",
+  // marginInline:"auto",
+  // marginBlock:matches?"70px 0px":"200px 0px",
+  // border:"2px solid red",
+}));
+
+export const CommentContainer = styled(Box)(() => ({
+  // border: "2px solid blue",
+}));
+
+export const CommentBody = styled(Typography)(() => ({
+  width:"fit-content",
+  padding: "10px 20px",
+  margin: "5px 10px",
+  borderRadius:"5px",
+  color: `${colors.textPrimary}`,
+  backgroundColor: `${colors.iconContainer}`,
+  // border: "2px solid blue",
 }));

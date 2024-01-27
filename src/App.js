@@ -9,7 +9,6 @@ import Main from "./components/main";
 import Home from "./components/home";
 import About from "./components/about";
 import Contact from "./components/contactUs";
-import Teachers from "./components/teachers";
 import Courses from "./components/courses";
 
 import CustomThemeProvider from "./styles/theme";
@@ -21,6 +20,7 @@ import Profile from './components/profile/index';
 import UpdateProfile from "./components/updateProfile";
 import CoursePage from "./components/courses/CoursePage";
 import CourseLessonPage from "./components/courses/CourseLessonPage";
+import AddCoursePage from "./components/courses/AddCoursePage";
 
 function App() {
   const matches = useMediaQuery(useTheme().breakpoints.down("md"));
@@ -30,22 +30,28 @@ function App() {
         <Routes>
         <Route path="/" exact element={<Navigate to="/home"/>}/>   
           <Route path="/" element={<Main matches={matches}/>}>
+
             <Route path="home" element={<Home matches={matches}/>}/>
-            {/* <Route path="home/:courseId" element={<CoursePage matches={matches}/>}/> */}
-            <Route path="teachers" element={<Teachers matches={matches}/>}/>
+            <Route path="contact" element={<Contact matches={matches}/>}/>
+            <Route path="about" element={<About matches={matches}/>}/>
+
+            <Route path="signup" element={<Signup matches={matches}/>}/>
+            <Route path="login" element={<Login matches={matches}/>}/>
+
+
+
+
+
+            <Route path="CreateCourse" element={<AddCoursePage matches={matches}/>}/>
 
             <Route path="courses" element={<Courses matches={matches}/>}/>
             <Route path="courses/:courseId" element={<CoursePage matches={matches}/>}/>
             <Route path="courses/:courseId/:lessonId" element={<CourseLessonPage matches={matches}/>}/>
             
-            <Route path="contact" element={<Contact matches={matches}/>}/>
-            <Route path="about" element={<About matches={matches}/>}/>
-            <Route path="signup" element={<Signup matches={matches}/>}/>
-            <Route path="login" element={<Login matches={matches}/>}/>
-
             <Route path="profile" element={<Profile matches={matches}/>}/>
             <Route path="profile/:userId" element={<Profile matches={matches}/>}/>
             <Route path="updateProfile" element={<UpdateProfile matches={matches}/>}/>
+
           </Route>
         </Routes>
       </BrowserRouter>
@@ -53,6 +59,7 @@ function App() {
   );
 }
 // /profile/:id?
+{/* <Route path="home/:courseId" element={<CoursePage matches={matches}/>}/> */}
 
 
 

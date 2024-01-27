@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  AboutContainer,
   AboutContent,
   AboutDescription,
   AboutImage,
@@ -16,6 +15,7 @@ import {
   VericalStack,
 } from "../../styles/about";
 import {
+  Container,
   CustomButton,
   CustomDivider,
   HeaderTitle,
@@ -36,7 +36,7 @@ const About = ({ matches }) => {
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -70,9 +70,9 @@ const About = ({ matches }) => {
   };
 
   return (
-    <AboutContainer>
+    <Container>
       <AboutInfo matches={matches}>
-        <AboutImageContaimer>
+        <AboutImageContaimer matches={matches}>
           {/* <AboutImage src="./images/a3.jpg" /> */}
           <AboutImage src="./images/Online learning-rafiki.png" />
 
@@ -174,7 +174,7 @@ const About = ({ matches }) => {
           <ReviewItem matches={matches} />
         </Slider>
       </ReviewsContainer>
-    </AboutContainer>
+    </Container>
   );
 };
 

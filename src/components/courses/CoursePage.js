@@ -29,7 +29,6 @@ const CoursePage = ({ matches }) => {
           <BookmarkIcon color="primary"/>
         </IconContainer> */}
       <CustomDivider />
-
       <CourseInfo matches={matches}>
         <CourseImageContaimer matches={matches}> 
           <CourseImage src="../images/image1.png" />

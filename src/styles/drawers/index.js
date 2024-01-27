@@ -2,6 +2,7 @@ import {
   Avatar,
   Box,
   Button,
+  Container,
   Drawer,
   ListItem,
   Typography,
@@ -9,22 +10,11 @@ import {
 } from "@mui/material";
 import { colors } from "../theme";
 
-// export const DrawerContainer = styled(Box)(() => ({
-//   width: "100%",
-//   // height: "100vh",
-//   display: "flex",
-//   flexDirection: "column",
-// }));
-
-
-
-export const MainContainer = styled(Box)(({ drawerwidth, matches }) => ({
-  width: matches ? "100%" : `calc(100% - ${drawerwidth}px)`,
+export const MainContainer = styled(Container)(({ drawerwidth, matches }) => ({
+  width: "100%" ,
   minHeight: `calc(100vh - 64px)`,
-  // minHeight: matches ? `calc(100vh - 65px)` : `calc(100% - 64px)`,
-  marginLeft: matches ? "0px" : `${drawerwidth}px`,
   backgroundColor: `${colors.white}`,
-  padding: "5px",
+  padding: "10px",
   position:"relative",
   boxSizing:"border-box",
   zIndex:"0",
@@ -36,22 +26,11 @@ export const TemporaryDrawer = styled(Drawer)(({ drawerwidth, matches }) => ({
   "& .MuiDrawer-paper": { width: drawerwidth },
   zIndex:"1",
 }));
-export const PermanentDrawer = styled(Drawer)(({ drawerwidth, matches }) => ({
-  display: matches ? "none" : "block",
-  "& .MuiDrawer-paper": {
-    width: drawerwidth,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    zIndex:"1",
-    // border: "2px solid red",
-  },
-}));
 
 export const CustomListItem = styled(ListItem)(() => ({
-  // border:"2px solid green",
   "&:hover": {
     cursor: "pointer",
     color: `${colors.primary}`,
   },
+  // border:"2px solid green",
 }));

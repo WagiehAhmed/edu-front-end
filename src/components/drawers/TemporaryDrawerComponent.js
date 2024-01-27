@@ -5,8 +5,7 @@ import { Box, List, ListItemButton, ListItemIcon, ListItemText, Toolbar } from '
 import HomeIcon from "@mui/icons-material/Home";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
-import CastForEducationIcon from "@mui/icons-material/CastForEducation";
-import SchoolIcon from "@mui/icons-material/School";
+
 import { colors } from '../../styles/theme';
 import { UserData, UserImage, UserName, CustomButton } from '../../styles/common';
 
@@ -26,7 +25,7 @@ const TemporaryDrawerComponent = ({matches,drawerwidth,drawerTriggerHandler,navH
         <CustomButton onClick={()=>{navHandler("profile")}}>view profile</CustomButton>
       </UserData>
       <List>
-        {["home", "about", "courses", "teachers", "contact"].map(
+        {["home", "about", "contact"].map(
           (item, index) => (
             <CustomListItem
               key={item}
@@ -39,10 +38,6 @@ const TemporaryDrawerComponent = ({matches,drawerwidth,drawerTriggerHandler,navH
                     <HomeIcon fontSize="medium" color="primary" />
                   ) : item === "about us" ? (
                     <QuestionMarkIcon fontSize="medium" color="primary" />
-                  ) : item === "courses" ? (
-                    <CastForEducationIcon fontSize="medium" color="primary" />
-                  ) : item === "teachers" ? (
-                    <SchoolIcon fontSize="medium" color="primary" />
                   ) : (
                     <HeadsetMicIcon fontSize="medium" color="primary" />
                   )}

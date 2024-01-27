@@ -3,7 +3,6 @@ import {
   ActionItem,
   ActionItemContainer,
   ActionItemsContainer,
-  Container,
   HorezontalStack,
   ProfileContainer,
   VericalStack,
@@ -24,15 +23,16 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
 import { Box, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Container } from './../../styles/common/index';
 
 const Profile = ({ matches }) => {
   const navigate = useNavigate();
 
   return (
-    <ProfileContainer>
-      <HeaderTitle variant={matches ? "h6" : "h4"}>your profile</HeaderTitle>
+    <Container>
+      <HeaderTitle variant={matches ? "h6" : "h4"}>profile Details</HeaderTitle>
       <CustomDivider />
-      <Container>
+      <ProfileContainer>
         <UserData>
           <UserImage src="../images/manProfile.png" />
           <UserName variant="body1">wagieh ahmed</UserName>
@@ -45,9 +45,9 @@ const Profile = ({ matches }) => {
           </CustomButton>
         </UserData>
 
-        <ActionItemsContainer container columns={{ xs: 4,sm: 8, md: 12 }}>
+        <ActionItemsContainer container columns={{ xs: 8,sm: 8, md: 12, lg:16 }}>
           <ActionItemContainer item xs={4}>
-            <ActionItem>
+            <ActionItem matches={matches}>
               <HorezontalStack>
                 <IconContainer>
                   <BookmarkIcon color="primary" />
@@ -62,7 +62,7 @@ const Profile = ({ matches }) => {
           </ActionItemContainer>
 
           <ActionItemContainer item xs={4}>
-            <ActionItem >
+            <ActionItem matches={matches}>
               <HorezontalStack>
                 <IconContainer>
                   <ThumbUpIcon color="primary" />
@@ -77,7 +77,7 @@ const Profile = ({ matches }) => {
           </ActionItemContainer>
 
           <ActionItemContainer item xs={4}>
-            <ActionItem>
+            <ActionItem matches={matches}>
               <HorezontalStack>
                 <IconContainer>
                   <ChatIcon color="primary" />
@@ -90,9 +90,26 @@ const Profile = ({ matches }) => {
               <CustomButton>view playlists</CustomButton>
             </ActionItem>
           </ActionItemContainer>
+
+          <ActionItemContainer item xs={4}>
+            <ActionItem matches={matches}>
+              <HorezontalStack>
+                <IconContainer>
+                  <ChatIcon color="primary" />
+                </IconContainer>
+                <VericalStack>
+                  <Typography variant="h5">0</Typography>
+                  <Typography variant="body2">Courses</Typography>
+                </VericalStack>
+              </HorezontalStack>
+              <CustomButton>view courses</CustomButton>
+            </ActionItem>
+          </ActionItemContainer>
         </ActionItemsContainer>
-      </Container>
-    </ProfileContainer>
+      </ProfileContainer>
+      <HeaderTitle variant={matches ? "h6" : "h4"}>Your Courses</HeaderTitle>
+      <CustomDivider />
+    </Container>
   );
 };
 

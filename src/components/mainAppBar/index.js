@@ -1,54 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
 
 import PersonIcon from "@mui/icons-material/Person";
-import ClearIcon from "@mui/icons-material/Clear";
-import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 
+import {
+  CustomList,
+  CustomListItem,
+  CustomListItemButton,
+  CustomListItemText,
+  IconStack,
+  LogoAvatar,
+  LogoStack,
+  LogoText,
+  MainAppBar,
+  MainToolBar,
+} from "../../styles/mainAppBar";
+import { IconButton, Slide, Tooltip } from "@mui/material";
+
+import LanguageIcon from "@mui/icons-material/Language";
+import CloseIcon from "@mui/icons-material/Close";
 
 import {
-    CustomAppBarContainer,
-    CustomMenuItem,
-    MainAppBar,
-  MainToolBar,
-  SearchBox,
-  SearchTextFeild,
-} from "../../styles/mainAppBar";
-import { IconButton, InputAdornment, Menu, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { IconContainer } from "../../styles/common";
+  CloseIconContainer,
+  CustomDialog,
+  CustomDialogContent,
+  IconContainer,
+} from "../../styles/common";
+import { colors } from "../../styles/theme";
+import Login from "../login";
 
-const MainAppBarComponent = ({matches,drawerwidth,navigate,drawerTriggerHandler}) => {
-  
-  const [searchQuery, setSearchQuery] = useState("");
-  const searchQueryChangeHandler = (event) => {
-    setSearchQuery(event.target.value);
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
+
+const MainAppBarComponent = ({
+  matches,
+  drawerwidth,
+  navHandler,
+  active,
+  drawerTriggerHandler,
+}) => {
+  // pofial search section dialog setters
+  const [open, setOpen] = React.useState(false);
+  const dialogTriggerHandler = () => {
+    setOpen(!open);
   };
-
-
-  const [anchorEl, setAnchorEl] = useState(null);
-  const openMenuHandler = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const closeMenuHandler = () => {
-    setAnchorEl(null);
-  };
-
-  
-  const loginHandler = () => {
-    closeMenuHandler();
-    navigate("login", { replace: true });
-  };
-
-  const signupHandler = (e) => {
-    closeMenuHandler();
-    navigate("signup", { replace: true });
-  };
-
-
 
   return (
-    <MainAppBar drawerwidth={drawerwidth} matches={matches} >
+    <MainAppBar drawerwidth={drawerwidth} matches={matches}>
       <MainToolBar>
         <IconButton
           color="inherit"
@@ -60,62 +59,64 @@ const MainAppBarComponent = ({matches,drawerwidth,navigate,drawerTriggerHandler}
           <MenuIcon />
         </IconButton>
 
-        <CustomAppBarContainer>
-          {/* logo */}
-          <Typography variant="h6" noWrap component="div">
-            Edu.
-          </Typography>
+        {/* logo */}
+        <LogoStack matches={matches}>
+          <LogoAvatar src="./images/logo.png" />
+          <LogoText variant="h6">edu</LogoText>
+        </LogoStack>
 
-          {/* search area */}
-          <SearchBox matches={matches}>
-            <SearchTextFeild
-              type="text"
-              variant="outlined"
-              placeholder="Search"
-              onChange={searchQueryChangeHandler}
-              value={searchQuery}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="start">
-                    {searchQuery ? (
-                      <ClearIcon
-                        onClick={() => setSearchQuery("")}
-                        sx={{ cursor: "pointer" }}
-                      />
-                    ) : (
-                      ""
-                    )}
-                  </InputAdornment>
-                ),
-              }}
-            />
+        {/* navigation area */}
+        <CustomList matches={matches}>
+          {["home", "about", "contact"].map((item, index) => (
+            <CustomListItem
+              key={item}
+              disablePadding
+              onClick={() => navHandler(item)}
+            >
+              <CustomListItemButton>
+                <CustomListItemText
+                  primary={item}
+                  active={active}
+                  item={item}
+                />
+              </CustomListItemButton>
+            </CustomListItem>
+          ))}
+        </CustomList>
 
-            {searchQuery ? (
-              <IconContainer>
-                <SearchIcon color="primary" />
-              </IconContainer>
-            ) : (
-              ""
-            )}
-          </SearchBox>
-
-          {/* personal area */}
-          <IconContainer onClick={openMenuHandler}>
-            <PersonIcon color="primary" />
-          </IconContainer>
-        </CustomAppBarContainer>
-
-        <Menu
-          anchorEl={anchorEl}
-          open={anchorEl ? true : false}
-          onClose={closeMenuHandler}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
+        <IconStack>
+          {/* language icon */}
+          <Tooltip title="Languages">
+            <IconContainer onClick={dialogTriggerHandler}>
+              <LanguageIcon color="primary" />
+            </IconContainer>
+          </Tooltip>
+          {/* personal icon */}
+          <Tooltip title="Login/Register">
+            <IconContainer onClick={dialogTriggerHandler}>
+              <PersonIcon color="primary" />
+            </IconContainer>
+          </Tooltip>
+        </IconStack>
+        
+        {/* login/register dialog section */}
+        <CustomDialog
+          open={open}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={dialogTriggerHandler}
+          aria-describedby="alert-dialog-slide-description"
         >
-          <CustomMenuItem onClick={loginHandler}>login</CustomMenuItem>
-          <CustomMenuItem onClick={signupHandler}>sign up</CustomMenuItem>
-        </Menu>
+          <CustomDialogContent>
+            <CloseIconContainer disableRipple onClick={dialogTriggerHandler}>
+              <CloseIcon />
+            </CloseIconContainer>
+            <Login
+              matches={matches}
+              dialogTriggerHandler={dialogTriggerHandler}
+            />
+          </CustomDialogContent>
+        </CustomDialog>
       </MainToolBar>
     </MainAppBar>
   );

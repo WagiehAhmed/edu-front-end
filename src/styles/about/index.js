@@ -6,13 +6,6 @@ import { Avatar, Paper } from "@mui/material";
 
 
 
-export const AboutContainer = styled(Box)(() => ({
-  padding: "10px",
-  width: "100%",
-  height: "100%",
-  // border: "2px solid red",
-}));
-
 export const AboutInfo = styled(Stack)(({ matches }) => ({
   flexDirection: matches ? "column" : "row",
   // border: "2px solid green",
@@ -21,9 +14,10 @@ export const AboutInfo = styled(Stack)(({ matches }) => ({
 export const AboutContent = styled(Stack)(({ matches }) => ({
   flexGrow: 1,
   maxWidth: matches?"100%":"50%",
+  position: "relative",
   flexDirection: "column",
   justifyContent: "center",
-  padding: "30px",
+  padding: "10px",
   // border: "2px solid yellow",
 }));
 
@@ -77,6 +71,7 @@ export const VericalStack = styled(Stack)(() => ({
     // border: "2px solid green",
 }));
 
+
 export const ActionsContainer = styled(Stack)(({ in_center }) => ({
   flexDirection: "row",
   flexWrap: "wrap",
@@ -101,23 +96,6 @@ export const ActionItemContainer = styled(Grid)(() => ({
   // backgroundColor:"green",
 }));
 
-// export const ActionItem = styled(Grid)(() => ({
-//   minWidth: "200px",
-//   maxWidth: "500px",
-//   margin: "0px auto",
-//   padding: "10px",
-//   borderRadius: "10px",
-//   backgroundColor: "#E5E7E4",
-//   boxShadow:
-//   "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
-//   "&:hover":{
-//     transform:"scale(1.05,1.05)",
-//   },
-//   // border: "2px solid red",
-// }));
-
-
-
 export const ActionItem = styled(Box)(() => ({
   minWidth: "250px",
   maxWidth: "500px",
@@ -126,18 +104,11 @@ export const ActionItem = styled(Box)(() => ({
   borderRadius: "10px",
   backgroundColor: `${colors.backgroundSecondary}`,
   boxShadow:"rgba(0, 0, 0, 0.3) 10px 20px 38px, rgba(0, 0, 0, 0.22) 10px 20px 12px, rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    
-    
     "&:hover":{
       transform:"scale(1.05,1.05)",
     }
     //   border: "2px solid green",
 }));
-
-
-
-
-
 
 export const ReviewsContainer = styled(Box)(() => ({
   backgroundColor: "white",
@@ -157,14 +128,6 @@ cursor:"pointer",
   padding: "5px",
   boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px",
   backgroundColor: `${colors.backgroundSecondary}`,
-    
-  // margin: "10px 50px ",
-  // minWidth: "300px",
-  // "& :hover":{
-  //   boxShadow:
-  //   "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
-    
-  // }
 }));
 
 
