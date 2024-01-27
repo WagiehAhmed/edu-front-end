@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Toolbar } from "@mui/material";
 import MainAppBarComponent from "../mainAppBar";
 import TemporaryDrawerComponent from "../drawers/TemporaryDrawerComponent";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { MainContainer } from "../../styles/drawers";
-import { Container, HeaderContainer, MainHeader } from "../../styles/common";
+import {HeaderContainer, MainHeader } from "../../styles/common";
 
-const Main = ({ matches }) => {
+const Main = ({ matches , mainTitle, setMainTitle}) => {
   const drawerwidth = 240;
   const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const  [searchParams, setSearchParams] = useSearchParams();
+  useEffect(() => {
+    if(!searchParams.get("name")){
+      setMainTitle("technological tracks");
+    }
+  });
 
   const drawerTriggerHandler = () => {
     setMobileOpen(!mobileOpen);
@@ -46,7 +53,7 @@ const Main = ({ matches }) => {
 
       <Toolbar />
       <HeaderContainer matches={matches}>
-        <MainHeader matches={matches}>technological tracks</MainHeader>
+        <MainHeader matches={matches}>{mainTitle}</MainHeader>
       </HeaderContainer>
       <MainContainer matches={matches} drawerwidth={drawerwidth}>
         <Outlet />

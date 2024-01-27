@@ -9,30 +9,30 @@ import {
   FormControlLabel,
   FormLabel,
   IconButton,
-  Link,
+  Stack,
   TextField,
   Typography,
   styled,
 } from "@mui/material";
 import { colors } from "../theme";
+import { Link } from "react-router-dom";
 
 // containers ............................................................................
 export const Container = styled(Box)(() => ({
   width: "100%",
   height: "100%",
-  padding: "10px",
-  border: "2px solid red",
+  // border: "2px solid red",
 }));
 
 export const HeaderContainer = styled(Box)(({ matches }) => ({
   width: "100%",
   height: matches ? "100px" : "150px",
-  paddingLeft: matches ? "60px" : "200px",
+  paddingLeft: matches ? "60px" : "350px",
   textTransform: "capitalize",
   display: "flex",
   flexDirection:"row",
   alignItems:"center",
-  background: "linear-gradient(45deg,#9f0465, #740805)",
+  background: "linear-gradient(45deg,#011465, #040205)",
   // border: "2px solid red",
 }));
 
@@ -51,7 +51,7 @@ export const CustomForm = styled("form")(({ matches }) => ({
   minWidth: matches ? "300px" : "400px",
   maxWidth: "100%",
   margin: "0px auto",
-  border: "2px solid red",
+  // border: "2px solid red",
 }));
 
 export const CustomFormControl = styled(FormControl)(({ matches }) => ({
@@ -62,14 +62,14 @@ export const CustomFormControl = styled(FormControl)(({ matches }) => ({
 
   // boxShadow:
   //   "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
-  border: "2px solid green",
+  // border: "2px solid green",
 }));
 
 export const CustomFormLabel = styled(FormLabel)(() => ({
   textAlign: "center",
   padding: "10px",
   margin: "10px 0px",
-  border: "2px solid red",
+  // border: "2px solid red",
   color: `${colors.black}`,
   "&::first-letter": {
     textTransform: "capitalize",
@@ -83,12 +83,19 @@ export const CustomFormControlLabel = styled(FormControlLabel)(() => ({
   textTransform: "capitalize",
   padding: "0px",
   margin: "5px 0px",
-  border: "2px solid red",
+  // border: "2px solid red",
 }));
 
 export const CustomTextFeild = styled(TextField)(() => ({
   flexGrow: 1,
   marginBottom: "15px",
+
+
+  "&.search-feild":{
+    // flexGrow:0,
+    margin:'0px',
+    maxWidth:"500px",
+  }
   // backgroundColor: "#ECEEEB",
   // borderRadius: "50px",
   // border:"2px solid green",
@@ -158,6 +165,7 @@ export const CustomButton = styled(Button)(() => ({
 
 export const CustomLink = styled(Link)(() => ({
   textTransform: "capitalize",
+  textDecoration:"none",
   color: `${colors.primary}`,
   "&:hover": {
     cursor: "pointer",
@@ -204,6 +212,16 @@ export const IconContainer = styled(IconButton)(() => ({
   margin: "1px",
   border: `1px solid ${colors.primary}`,
   backgroundColor: `${colors.iconContainer}`,
+  "&.lock-open":{
+    backgroundColor: "transparent",
+    margin: "2px",
+    border: "none",
+  },
+  "&.enrolled-students":{
+    backgroundColor: "transparent",
+    margin: "2px",
+    border: "none",
+  },
   "&:hover": {
     backgroundColor: `${colors.white}`,
     scale: "1.1",
@@ -244,15 +262,14 @@ export const CloseIconContainer = styled(IconButton)(() => ({
 }));
 
 // search section ..........................................................................
-// export const SearchBox = styled(Box)(({ matches }) => ({
-//   maxWidth: "500px",
-//   flexGrow: 1,
-//   display: matches ? "none" : "flex",
-//   flexDirection: "row",
-//   justifyContent: "center",
-//   alignItems: "center",
-//   border: "2px solid red",
-// }));
+export const SearchStack= styled(Stack)(() => ({
+  padding:"25px",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  // border: "2px solid red",
+}));
 
 // dialog section ..........................................................................
 export const CustomDialog = styled(Dialog)(() => ({

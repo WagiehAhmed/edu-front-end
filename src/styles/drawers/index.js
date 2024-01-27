@@ -14,11 +14,11 @@ export const MainContainer = styled(Container)(({ drawerwidth, matches }) => ({
   width: "100%" ,
   minHeight: `calc(100vh - 64px)`,
   backgroundColor: `${colors.white}`,
-  padding: "10px",
   position:"relative",
   boxSizing:"border-box",
   zIndex:"0",
-  // border: "2px solid red",
+  padding:"0px !important",
+  // border: "2px solid blue",
 }));
 
 export const TemporaryDrawer = styled(Drawer)(({ drawerwidth, matches }) => ({

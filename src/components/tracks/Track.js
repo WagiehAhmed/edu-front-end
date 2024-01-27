@@ -1,14 +1,26 @@
-import React from 'react'
-import { TrackCard, TrackCardMedia, TrackContainer } from '../../styles/tracks'
+import React from "react";
+import {
+  TrackCard,
+  TrackCardMedia,
+  TrackContainer,
+  TrackName,
+} from "../../styles/tracks";
+import { Box } from "@mui/material";
+import { CustomLink } from "../../styles/common";
 
-const Track = ({matches}) => {
+const Track = ({ matches, track }) => {
   return (
     <TrackContainer item xs={4} matches={matches}>
-      <TrackCard elevation={5} matches={matches}>
-        <TrackCardMedia image="./images/image1.png" title="course media" />
-      </TrackCard>
+      <CustomLink to={`/track?name=${track.name}`}>
+        <TrackCard elevation={5} matches={matches}>
+          <TrackCardMedia image={track.image}>
+            <Box className="overlay" />
+            <TrackName className="track-name">{track.name}</TrackName>
+          </TrackCardMedia>
+        </TrackCard>
+      </CustomLink>
     </TrackContainer>
-  )
-}
+  );
+};
 
-export default Track
+export default Track;

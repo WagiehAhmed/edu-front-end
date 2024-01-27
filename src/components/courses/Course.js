@@ -6,33 +6,56 @@ import {
   CourseCardHeader,
   CourseCardMedia,
   CourseContainer,
+  CourseDetailsStack,
   CourseName,
+  CourseState,
+  TrackName,
+  TrackPreview,
   ViewCourse,
 } from "../../styles/cousers";
-import { Avatar } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import PersonIcon from "@mui/icons-material/Person";
+import { Avatar, Box, Typography } from "@mui/material";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { CustomLink, IconContainer } from "../../styles/common";
 
-const Course = ({ matches }) => {
-  const navigate= useNavigate()
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+
+const Course = ({ matches,course }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <CourseContainer item xs={4} matches={matches}>
+      <CustomLink to={`/track/${course.id}`}>
+        <CourseCard elevation={5} matches={matches}>
+          <CourseCardMedia image={course.image} title="course media">
+            <Box className="overlay" />
+            <TrackName className="track-name">
+              {searchParams.get("name")}
+            </TrackName>
+            <TrackPreview className="track-preview">
+              preview course
+            </TrackPreview>
+          </CourseCardMedia>
+          <CourseDetailsStack>
+            <CourseName variant="h6" className="course-name">
+              {course.name}
+            </CourseName>
+            <IconContainer className="lock-open">
+              <LockOpenIcon color="primary" />
+            </IconContainer>
+          </CourseDetailsStack>
 
-      <CourseCard elevation={5} matches={matches}>
-        <CourseCardMedia image="./images/image1.png" title="course media" />
-        
-         {/* <CourseCardContent> */}
-          <CourseName variant="h6" component="div">
-           Node js course
-          </CourseName>
-          {/* <Rating defaultValue={2} precision={1}/> */}
-        {/* </CourseCardContent> */}
+          <CourseDetailsStack>
+            <CourseDetailsStack className="enrolled-students">
+              <IconContainer className="enrolled-students">
+                <PersonIcon />
+              </IconContainer>
+              {course.enrolledStudents}
+            </CourseDetailsStack>
 
-        <CourseCardActions >
-          <ViewCourse onClick={()=>{navigate("/courses/1",{replace:false})}}>view course</ViewCourse>
-        </CourseCardActions>
-        
-      </CourseCard>
-
+            <CourseState>FREE</CourseState>
+          </CourseDetailsStack>
+        </CourseCard>
+      </CustomLink>
     </CourseContainer>
   );
 };

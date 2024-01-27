@@ -41,11 +41,24 @@ export const CourseCard = styled(Card)(({ matches }) => ({
   // padding: "10px 10px 0px 10px",
   // border: "5px solid blue",
 
+
   "&:hover": {
-    "& .name": {
+    "& .overlay": {
+      backgroundColor: "rgba(0,0,100,0.25)",
+    },
+    "& .track-name": {
+      transform: "scale(1,1)",
+      visibility: "visible",
+    },
+    "& .course-name": {
       color: `${colors.primary}`,
     },
+    "& .track-preview": {
+      transform: "translate(-50%, -300%) scale(1.5,1.5)", 
+      visibility: "visible",
+    },
   },
+
 }));
 
 export const CourseCardHeader = styled(CardHeader)(({ title, subheader }) => ({
@@ -56,30 +69,60 @@ export const CourseCardHeader = styled(CardHeader)(({ title, subheader }) => ({
 export const CourseCardMedia = styled(CardMedia)(({ image, title }) => ({
   height: "200px",
   position: "relative",
-  // borderRadius: "5px",
   image: image,
   title: title,
 
-  "&:hover": {
-    "& .playIcon": {
-      transform: "scale(1.5,1.5)",
-      color: `${colors.white}`,
-    },
-
-    "& .play": {
-      visibility: "visible",
-      backgroundColor: "rgba(0,0,0,0.5)",
-    },
+  "& .overlay": {
+    width: "100%",
+    height: "100%",
+    transition: "background 0.5s ease",
   },
+
 }));
 
-export const CourseCardContent = styled(CardContent)(() => ({
-  // border: "5px solid yellow",
+export const TrackName = styled(Typography)(() => ({
+  position: "absolute",
+  top: "10px",
+  left: "10px", 
+  borderRadius:"10px",
+  textTransform: "capitalize",
+  textAlign: "center",
+  color: `${colors.white}`,
+  padding: "8px",
+  width: "fit-content",
+  backgroundColor: "rgba(0,0,200,0.25)",
+  visibility: "hidden",
+  transition: "transform 0.5s ease",
+  transform: "scale(0.5,0.5)",
+  // border: "2px solid blue",
 }));
+
+export const TrackPreview = styled(Typography)(() => ({
+  position: "absolute",
+  top: "100%",
+  left: "50%",
+  transform: "translate(-50%, -50%) scale(0,0)", 
+  visibility: "hidden",
+  borderRadius:"10px",
+  textTransform: "capitalize",
+  textAlign: "center",
+  color: `${colors.white}`,
+  padding: "8px",
+  width: "fit-content",
+  transition: "transform 0.5s ease",
+  // border: "2px solid blue",
+}));
+
+// export const CourseCardContent = styled(CardContent)(() => ({
+//   border: "5px solid yellow",
+// }));
 
 export const CourseName = styled(Typography)(() => ({
   textTransform: "capitalize",
   padding: "8px",
+  overflow:"hidden",
+  textOverflow:"ellipsis",
+  whiteSpace:"nowrap",
   color: `${colors.textPrimary}`,
   // border: "5px solid blue",
 }));
@@ -159,11 +202,40 @@ export const CourseImageContaimer = styled(Box)(({ matches }) => ({
 
 export const CourseImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
+  objectFit:"cover",
   width: "100%",
   height: "100%",
   boxSizing: "border-box",
 }));
 
+export const CoursesCount = styled(Typography)(() => ({
+  textTransform: "capitalize",
+  width: "fit-content",
+  margin:"5px",
+}));
+
+export const CourseState= styled(Typography)(() => ({
+  textTransform: "capitalize",
+  width: "fit-content",
+}));
+
+export const CourseDetailsStack = styled(Stack)(() => ({
+  textTransform: "capitalize",
+  padding: "8px",
+  color: `${colors.textPrimary}`,
+  flexDirection:"row",
+  justifyContent:"space-between",
+  alignItems:"center",
+  "&.enrolled-students":{
+    padding:"0px",
+    margin:"0px",
+    width:"fit-content",
+  },
+  // border: "5px solid blue",
+}));
+
+
+// lesson section ...........................................................................
 export const LessonVideo = styled("video")(() => ({
   width: "100%",
   maxHeight: "800px",
@@ -219,9 +291,9 @@ export const IconContainer = styled(IconButton)(() => ({
 
 export const CustomForm = styled("form")(({ matches }) => ({
   width: matches ? "80%" : "40%",
-  minWidth: matches?"300px":"400px",
-  minWidth:"100%",
-  marginBottom:"20px",
+  minWidth: matches ? "300px" : "400px",
+  minWidth: "100%",
+  marginBottom: "20px",
   // marginInline:"auto",
   // marginBlock:matches?"70px 0px":"200px 0px",
   // border:"2px solid red",
@@ -232,10 +304,10 @@ export const CommentContainer = styled(Box)(() => ({
 }));
 
 export const CommentBody = styled(Typography)(() => ({
-  width:"fit-content",
+  width: "fit-content",
   padding: "10px 20px",
   margin: "5px 10px",
-  borderRadius:"5px",
+  borderRadius: "5px",
   color: `${colors.textPrimary}`,
   backgroundColor: `${colors.iconContainer}`,
   // border: "2px solid blue",
