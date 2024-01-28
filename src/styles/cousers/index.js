@@ -19,7 +19,7 @@ import { colors } from "../theme";
 export const CoursesContainer = styled(Grid)(() => ({
   boxSizing: "border-box",
   // backgroundColor: "red",
-  // border: "5px solid red",
+  border: "5px solid red",
 }));
 
 export const CourseContainer = styled(Grid)(({ matches }) => ({
@@ -29,7 +29,7 @@ export const CourseContainer = styled(Grid)(({ matches }) => ({
     cursor: "pointer",
   },
   // backgroundColor: "green",
-  // border: "5px solid green",
+  border: "5px solid green",
 }));
 
 export const CourseCard = styled(Card)(({ matches }) => ({

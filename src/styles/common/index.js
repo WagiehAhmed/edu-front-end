@@ -9,13 +9,13 @@ import {
   FormControlLabel,
   FormLabel,
   IconButton,
+  Link,
   Stack,
   TextField,
   Typography,
   styled,
 } from "@mui/material";
 import { colors } from "../theme";
-import { Link } from "react-router-dom";
 
 // containers ............................................................................
 export const Container = styled(Box)(() => ({
@@ -48,10 +48,10 @@ export const MainHeader = styled(Typography)(({ matches }) => ({
 // forms section ...........................................................................
 export const CustomForm = styled("form")(({ matches }) => ({
   width: matches ? "80%" : "40%",
-  minWidth: matches ? "300px" : "400px",
+  minWidth: matches ? "200px" : "400px",
   maxWidth: "100%",
   margin: "0px auto",
-  // border: "2px solid red",
+  border: "2px solid green",
 }));
 
 export const CustomFormControl = styled(FormControl)(({ matches }) => ({
@@ -268,7 +268,7 @@ export const SearchStack= styled(Stack)(() => ({
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "center",
-  // border: "2px solid red",
+  border: "2px solid red",
 }));
 
 // dialog section ..........................................................................
@@ -279,14 +279,14 @@ export const CustomDialog = styled(Dialog)(() => ({
 export const CustomDialogContent = styled(DialogContent)(() => ({
   position: "relative",
   overflow: "hidden",
-  padding: "20px 10px",
+  padding: "20px 0px",
   maxWidth: "500px",
-  minWidth: "350px",
+  minWidth: "250px",
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
   backgroundColor: "white",
   alignItems: "center",
   backgroundColor: "transparent",
-  //  border: "2px solid red"
+   border: "2px solid red"
 }));

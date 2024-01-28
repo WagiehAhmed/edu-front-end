@@ -49,19 +49,9 @@ function App() {
             <Route path="login" element={<Login matches={matches} />} />
 
             <Route
-              path="track"
-              element={
-                <Courses matches={matches} setMainTitle={setMainTitle} />
-              }
-            />
-            <Route
-              path="track/:courseId"
-              element={<CoursePage matches={matches} />}
-            />
-            <Route
-              path="track/:courseId/:lessonId"
-              element={<CourseLessonPage matches={matches} />}
-            />
+              path="track" element={<Courses matches={matches} setMainTitle={setMainTitle} /> } />
+            <Route path="track/:courseId" element={<CoursePage matches={matches} />}    />
+            <Route  path="track/:courseId/:lessonId" element={<CourseLessonPage matches={matches} />} />
 
 
 
