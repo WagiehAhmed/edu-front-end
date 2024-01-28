@@ -21,7 +21,7 @@ import { colors } from "../theme";
 export const Container = styled(Box)(() => ({
   width: "100%",
   height: "100%",
-  border: "2px solid red",
+  // border: "2px solid red",
 }));
 
 export const HeaderContainer = styled(Box)(({ matches }) => ({
@@ -51,7 +51,7 @@ export const CustomForm = styled("form")(({ matches }) => ({
   minWidth: matches ? "100%" : "400px",
   maxWidth: "100%",
   margin: "0px auto",
-  border: "2px solid green",
+  // border: "2px solid green",
 }));
 
 export const CustomFormControl = styled(FormControl)(({ matches }) => ({
@@ -268,7 +268,7 @@ export const SearchStack= styled(Stack)(() => ({
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "center",
-  border: "2px solid red",
+  // border: "2px solid red",
 }));
 
 // dialog section ..........................................................................
@@ -279,7 +279,7 @@ export const CustomDialog = styled(Dialog)(() => ({
 export const CustomDialogContent = styled(DialogContent)(() => ({
   position: "relative",
   overflow: "hidden",
-  padding: "20px 0px",
+  padding: "0px",
   maxWidth: "500px",
   minWidth: "250px",
   display: "flex",
@@ -288,5 +288,5 @@ export const CustomDialogContent = styled(DialogContent)(() => ({
   backgroundColor: "white",
   alignItems: "center",
   backgroundColor: "transparent",
-   border: "2px solid red"
+  //  border: "2px solid red"
 }));

@@ -10,9 +10,9 @@ import {blockChainCourses} from "../../data/data"
 const TrackCourses = ({ matches, setMainTitle }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const trackName = searchParams.get("name");
-  useEffect(() => {
-    setMainTitle(trackName);
-  }, []);
+  // useEffect(() => {
+  //   setMainTitle(trackName);
+  // }, []);
   return (
     <Container>
       <SearchStack>

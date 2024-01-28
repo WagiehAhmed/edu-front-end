@@ -4,20 +4,19 @@ import MainAppBarComponent from "../mainAppBar";
 import TemporaryDrawerComponent from "../drawers/TemporaryDrawerComponent";
 import { Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { MainContainer } from "../../styles/drawers";
-import {HeaderContainer, MainHeader } from "../../styles/common";
+// import {HeaderContainer, MainHeader } from "../../styles/common";
 
 const Main = ({ matches , mainTitle, setMainTitle}) => {
   const drawerwidth = 240;
   const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const  {pathname} = useLocation();
-
-  useEffect(() => {
-    if(pathname == "/home"){
-      setMainTitle("technological tracks");
-    }
-  });
+  // const  {pathname} = useLocation();
+  // useEffect(() => {
+  //   if(pathname == "/home" || pathname == "/login" || pathname == "/signup"){
+  //     setMainTitle("technological tracks");
+  //   }
+  // });
 
   const drawerTriggerHandler = () => {
     setMobileOpen(!mobileOpen);
@@ -53,9 +52,9 @@ const Main = ({ matches , mainTitle, setMainTitle}) => {
       />
 
       <Toolbar />
-      <HeaderContainer matches={matches}>
+      {/* <HeaderContainer matches={matches}>
         <MainHeader matches={matches}>{mainTitle}</MainHeader>
-      </HeaderContainer>
+      </HeaderContainer> */}
       <MainContainer matches={matches} drawerwidth={drawerwidth}>
         <Outlet />
       </MainContainer>
