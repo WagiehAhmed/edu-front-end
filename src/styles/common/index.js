@@ -48,7 +48,7 @@ export const MainHeader = styled(Typography)(({ matches }) => ({
 // forms section ...........................................................................
 export const CustomForm = styled("form")(({ matches }) => ({
   width: matches ? "80%" : "40%",
-  minWidth: matches ? "200px" : "400px",
+  minWidth: matches ? "100%" : "400px",
   maxWidth: "100%",
   margin: "0px auto",
   border: "2px solid green",

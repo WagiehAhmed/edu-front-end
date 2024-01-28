@@ -82,7 +82,7 @@ const Login = ({ matches, dialogTriggerHandler }) => {
   };
 
   return (
-    <>
+    <Container>
       <CustomForm matches={matches}>
         <CustomFormControl matches={matches}>
           <CustomFormLabel>login to your account</CustomFormLabel>
@@ -168,7 +168,7 @@ const Login = ({ matches, dialogTriggerHandler }) => {
           {alertMessage}
         </SnackBarAlert>
       </Snackbar>
-    </>
+    </Container>
   );
 };
 
