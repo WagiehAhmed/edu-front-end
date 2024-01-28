@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Container,
   CustomButton,
   CustomDivider,
   HeaderTitle,
@@ -23,21 +24,16 @@ import CourseLesson from "./CourseLesson";
 const CoursePage = ({ matches }) => {
   const navigate = useNavigate();
   return (
-    <>
-      <HeaderTitle variant={matches ? "h6" : "h4"} sx={{display:"inline-block"}}>course details</HeaderTitle>
-        {/* <IconContainer >
-          <BookmarkIcon color="primary"/>
-        </IconContainer> */}
-      <CustomDivider />
+    <Container>
       <CourseInfo matches={matches}>
         <CourseImageContaimer matches={matches}> 
-          <CourseImage src="../images/image1.png" />
+          <CourseImage src="../../images/image1.png" />
         </CourseImageContaimer>
         <CourseContent matches={matches}>
           <CourseCardHeader
             avatar={
               <Avatar
-                src="../images/manProfile.png"
+                src="../../images/manProfile.png"
                 sx={{ width: "60px", height: "60px" }}
               />
             }
@@ -61,7 +57,6 @@ const CoursePage = ({ matches }) => {
         </CourseContent>
       </CourseInfo>
 
-      <HeaderTitle variant={matches ? "h6" : "h4"} >course lessons</HeaderTitle>
       <CustomDivider />
       <CoursesContainer   container
         columns={{ xs: 4, sm: 8, md: 8, lg: 12, xl: 16 }}
@@ -111,7 +106,7 @@ const CoursePage = ({ matches }) => {
         <CourseLesson matches={matches}/>
         <CourseLesson matches={matches}/>
       </CoursesContainer>
-    </>
+    </Container>
   );
 };
 

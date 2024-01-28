@@ -21,15 +21,21 @@ import { CustomLink, IconContainer } from "../../styles/common";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 
 const Course = ({ matches,course }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  // go to course
+  const goToCourse = () => {
+    navigate(`${course.id}`, { replace: false });
+  };
   return (
     <CourseContainer item xs={4} matches={matches}>
-      <CustomLink to={`/track/${course.id}`}>
+      <CustomLink onClick={goToCourse}>
         <CourseCard elevation={5} matches={matches}>
           <CourseCardMedia image={course.image} title="course media">
             <Box className="overlay" />
             <TrackName className="track-name">
-              {searchParams.get("name")}
+              {course.id}
+              {/* {searchParams.get("name")} */}
             </TrackName>
             <TrackPreview className="track-preview">
               preview course

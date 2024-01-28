@@ -25,7 +25,7 @@ const TemporaryDrawerComponent = ({matches,drawerwidth,drawerTriggerHandler,navH
         <CustomButton onClick={()=>{navHandler("profile")}}>view profile</CustomButton>
       </UserData>
       <List>
-        {["home", "about", "contact"].map(
+        {["tracks", "about", "contact"].map(
           (item, index) => (
             <CustomListItem
               key={item}

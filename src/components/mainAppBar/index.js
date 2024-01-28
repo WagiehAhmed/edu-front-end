@@ -61,13 +61,13 @@ const MainAppBarComponent = ({
 
         {/* logo */}
         <LogoStack matches={matches}>
-          <LogoAvatar src="./images/logo.png" />
+          <LogoAvatar src="../../images/logo.png" />
           <LogoText variant="h6">edu</LogoText>
         </LogoStack>
 
         {/* navigation area */}
         <CustomList matches={matches}>
-          {["home", "about", "contact"].map((item, index) => (
+          {["tracks", "about", "contact"].map((item, index) => (
             <CustomListItem
               key={item}
               disablePadding

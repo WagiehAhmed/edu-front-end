@@ -15,7 +15,7 @@ const CourseLesson = ({ matches }) => {
   return (
     <CourseContainer item xs={4} matches={matches} onClick={()=>{navigate("2",{replace:false})}}>
       <CourseCard elevation={5} matches={matches}>
-        <CourseCardMedia image="../images/image1.png" title="course media">
+        <CourseCardMedia image="../../images/image1.png" title="course media">
           <StartIconContainer className="play">
             <PlayArrowIcon fontSize="large" className="playIcon"/>
           </StartIconContainer>

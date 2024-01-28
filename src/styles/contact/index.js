@@ -53,6 +53,7 @@ export const ContactImageContaimer = styled(Box)(({ matches }) => ({
 
 export const ContactImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
+  objectFit:"cover",
   width: "100%",
   height: "100%",
   boxSizing: "border-box",

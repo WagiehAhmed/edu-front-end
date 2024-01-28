@@ -55,7 +55,7 @@ const Main = ({ matches , mainTitle, setMainTitle}) => {
       {/* <HeaderContainer matches={matches}>
         <MainHeader matches={matches}>{mainTitle}</MainHeader>
       </HeaderContainer> */}
-      <MainContainer matches={matches} drawerwidth={drawerwidth}>
+      <MainContainer matches={matches}>
         <Outlet />
       </MainContainer>
     </Box>

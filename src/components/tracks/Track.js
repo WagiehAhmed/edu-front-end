@@ -15,7 +15,7 @@ const Track = ({ matches, track }) => {
   const navigate = useNavigate();
   // go to sign up
   const goToTrack = () => {
-    navigate(`/track?name=${track.name}`, { replace: false });
+    navigate(`${track.id}`, { replace: false });
   };
 
   return (

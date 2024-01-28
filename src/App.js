@@ -30,7 +30,7 @@ function App() {
     <CustomThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Navigate to="/home" />} />
+          <Route path="/" exact element={<Navigate to="/tracks" />} />
           <Route
             path="/"
             element={
@@ -41,17 +41,16 @@ function App() {
               />
             }
           >
-            <Route path="home" element={<Home matches={matches} />} />
+            <Route path="tracks" element={<Home matches={matches} />} />
+            <Route path="tracks/:trackId" element={<Courses matches={matches} setMainTitle={setMainTitle} /> } />
+            <Route path="tracks/:trackId/:courseId" element={<CoursePage matches={matches} />}    />
+            <Route path="tracks/:trackId/:courseId/:lessonId" element={<CourseLessonPage matches={matches} />} />
+            
             <Route path="contact" element={<Contact matches={matches} />} />
             <Route path="about" element={<About matches={matches} />} />
 
             <Route path="signup" element={<Signup matches={matches} />} />
             <Route path="login" element={<Login matches={matches} />} />
-
-            <Route
-              path="track" element={<Courses matches={matches} setMainTitle={setMainTitle} /> } />
-            <Route path="track/:courseId" element={<CoursePage matches={matches} />}    />
-            <Route  path="track/:courseId/:lessonId" element={<CourseLessonPage matches={matches} />} />
 
 
 

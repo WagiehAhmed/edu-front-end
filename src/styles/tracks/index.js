@@ -9,7 +9,6 @@ import { colors } from "../theme";
 
 export const TracksContainer = styled(Grid)(() => ({
   boxSizing: "border-box",
-  marginTop: "20px",
   // border: "5px solid red",
 }));
 

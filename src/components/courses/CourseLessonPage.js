@@ -33,7 +33,7 @@ const CourseLessonPage = ({ matches }) => {
   return (
     <Container>
       <LessonVideo controls >
-        <LessonSource src="../../videos/lesson.mp4" type="video/mp4" />
+        <LessonSource src="../../../videos/lesson.mp4" type="video/mp4" />
       </LessonVideo>
       <CourseName variant="h6">Node js complete course lesson 1.</CourseName>
       <HorizontalStack>
@@ -60,7 +60,7 @@ const CourseLessonPage = ({ matches }) => {
       </HorizontalStack>
       <CustomDivider />
       <HorizontalStack>
-        <UserImage src="../../images/manProfile.png" />
+        <UserImage src="../../../images/manProfile.png" />
         <UserName>johan wael</UserName>
       </HorizontalStack>
       <LessonDescription>
@@ -99,7 +99,7 @@ const CourseLessonPage = ({ matches }) => {
       <CustomDivider />
       <CommentContainer>
         <HorizontalStack>
-          <UserImage src="../../images/manProfile.png" />
+          <UserImage src="../../../images/manProfile.png" />
           <VerticalStack>
             <UserName>johan wael</UserName>
             <Typography color={colors.textSecondary}>22-10-2024</Typography>
@@ -111,7 +111,7 @@ const CourseLessonPage = ({ matches }) => {
       </CommentContainer>
       <CommentContainer>
         <HorizontalStack>
-          <UserImage src="../../images/manProfile.png" />
+          <UserImage src="../../../images/manProfile.png" />
           <VerticalStack>
             <UserName>johan wael</UserName>
             <Typography color={colors.textSecondary}>22-10-2024</Typography>
@@ -123,7 +123,7 @@ const CourseLessonPage = ({ matches }) => {
       </CommentContainer>
       <CommentContainer>
         <HorizontalStack>
-          <UserImage src="../../images/manProfile.png" />
+          <UserImage src="../../../images/manProfile.png" />
           <VerticalStack>
             <UserName>johan wael</UserName>
             <Typography color={colors.textSecondary}>22-10-2024</Typography>

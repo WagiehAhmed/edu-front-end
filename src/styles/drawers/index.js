@@ -10,14 +10,16 @@ import {
 } from "@mui/material";
 import { colors } from "../theme";
 
-export const MainContainer = styled(Container)(({ drawerwidth, matches }) => ({
+export const MainContainer = styled(Container)(({ matches }) => ({
   width: "100%" ,
-  minHeight: `calc(100vh - 64px)`,
+  // minHeight: "100dvh",
   backgroundColor: `${colors.white}`,
+  // backgroundColor: "rgba(0,0,0,0.1)",
   position:"relative",
   boxSizing:"border-box",
   zIndex:"0",
   padding:"0px !important",
+  marginBlock:'20px',
   // border: "2px solid blue",
 }));
 
