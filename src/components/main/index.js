@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Toolbar } from "@mui/material";
 import MainAppBarComponent from "../mainAppBar";
 import TemporaryDrawerComponent from "../drawers/TemporaryDrawerComponent";
-import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
+import { Outlet, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { MainContainer } from "../../styles/drawers";
 import {HeaderContainer, MainHeader } from "../../styles/common";
 
@@ -11,9 +11,10 @@ const Main = ({ matches , mainTitle, setMainTitle}) => {
   const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const  [searchParams, setSearchParams] = useSearchParams();
+  const  {pathname} = useLocation();
+
   useEffect(() => {
-    if(!searchParams.get("name")){
+    if(pathname == "/home"){
       setMainTitle("technological tracks");
     }
   });
